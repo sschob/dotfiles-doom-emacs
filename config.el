@@ -30,6 +30,9 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; should be set before the package loads
+(setq org-roam-directory "~/.deft")
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -41,10 +44,6 @@
   :config
   ;;  code here will run after the package is loaded
   )
-
-  ;(after! org-roam
-(setq org-roam-directory "~/.deft"); )
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
