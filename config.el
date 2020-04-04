@@ -61,3 +61,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+;; disable right option modifier to typeset certain symbols
+(after! macos
+  (setq mac-right-option-modifier nil))
