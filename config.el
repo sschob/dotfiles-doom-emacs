@@ -65,3 +65,17 @@
 ;; disable right option modifier to typeset certain symbols
 (after! macos
   (setq mac-right-option-modifier nil))
+
+(after! org
+  (setq org-directory "~/org")
+  (setq org-default-notes-file "~/org/todo/refile.org")
+  (setq org-agenda-files (quote ("~/org/todo/todo.org"
+                                 "~/org/todo/bpw.org"
+                                 "~/org/todo/privat.org"
+                                 "~/org/todo/refile.org"
+                                 "~/org/notes.org"
+                                 "~/vorlesungen/TIB_ML/readme.org"
+                                 "~/vorlesungen/AdvDM/readme.org")))
+  (setq org-todo-keywords
+        (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))))
