@@ -63,8 +63,10 @@
 ;; they are implemented.
 
 ;; disable right option modifier to typeset certain symbols
-(after! macos
-  (setq mac-right-option-modifier nil))
+(setq mac-right-option-modifier nil)
+;; tried this use !after, but does not work
+;; (after! macos
+;;   (setq mac-right-option-modifier nil))
 
 (after! org
   (setq org-directory "~/org")
