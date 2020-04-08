@@ -68,6 +68,10 @@
 ;; (after! macos
 ;;   (setq mac-right-option-modifier nil))
 
+
+(setq diary-file "~/org/diary")
+
+
 (after! org
   (setq org-directory "~/org")
   (setq org-default-notes-file "~/org/todo/refile.org")
