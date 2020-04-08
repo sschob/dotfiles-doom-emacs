@@ -81,3 +81,9 @@
   (setq org-todo-keywords
         (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING")))))
+
+
+(after! ox-latex
+  (setq org-latex-listings 'minted
+        org-latex-pdf-process '("latexmk -pdf -shell-escape %o %f"))
+  (add-to-list 'org-latex-packages-alist '("" "minted" )))
