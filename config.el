@@ -68,9 +68,8 @@
 ;; (after! macos
 ;;   (setq mac-right-option-modifier nil))
 
-
-(setq diary-file "~/org/diary")
-
+;; set-key for easier backslash
+(global-set-key (kbd "s-ß") (kbd "\\"))
 
 (after! org
   (load-file "clock-setup.el")
