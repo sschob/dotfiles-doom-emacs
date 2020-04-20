@@ -72,7 +72,7 @@
 (global-set-key (kbd "s-ß") (kbd "\\"))
 
 (after! org
-  (load-file "clock-setup.el")
+  (load-file "~/.doom.d/clock-setup.el")
   (setq org-directory "~/org"
         org-agenda-files (quote ("~/org/todo/todo.org"
                                  "~/org/todo.org"
