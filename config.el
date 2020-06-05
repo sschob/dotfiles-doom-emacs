@@ -104,22 +104,22 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                ))
 
-(use-package! org-download
-  :commands
-  org-download-dnd
-  org-download-yank
-  org-download-screenshot
-  org-download-dnd-base64
-  :config
-  (setq org-download-image-dir "./images"
-        org-download-link-format "[[file:%s]]\n"
-        org-download-method 'directory
-        org-download-heading-lvl nil
-        org-download-timestamp "_%Y%m%d_%H%M%S"
-        org-download-screenshot-method
-        (cond (IS-MAC "screencapture -i %s")
-              (IS-LINUX
-               (cond ((executable-find "maim")  "maim -s %s")
-                     ((executable-find "scrot") "scrot -s %s")
-                     ((executable-find "gnome-screenshot") "gnome-screenshot -a -f %s")))))
-  )
+;; (use-package! org-download
+;;   :commands
+;;   org-download-dnd
+;;   org-download-yank
+;;   org-download-screenshot
+;;   org-download-dnd-base64
+;;   :config
+;;   (setq org-download-image-dir "./images"
+;;         org-download-link-format "[[file:%s]]\n"
+;;         org-download-method 'directory
+;;         org-download-heading-lvl nil
+;;         org-download-timestamp "_%Y%m%d_%H%M%S"
+;;         org-download-screenshot-method
+;;         (cond (IS-MAC "screencapture -i %s")
+;;               (IS-LINUX
+;;                (cond ((executable-find "maim")  "maim -s %s")
+;;                      ((executable-find "scrot") "scrot -s %s")
+;;                      ((executable-find "gnome-screenshot") "gnome-screenshot -a -f %s")))))
+;;  )
