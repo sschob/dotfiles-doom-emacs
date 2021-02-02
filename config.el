@@ -104,6 +104,14 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                ))
 
+;; config for biblio
+(setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
+;      +biblio-default-bibliography-files (concat (getenv "HOME") "/Dropbox/bibliography/MyLibrary.bib") ;'("/path/to/bibliography.bib")
+       ;;https://github.com/jkitchin/org-ref/issues/757
+       +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
+       ;;+biblio-notes-path (concat (getenv "HOME") "/Sync/notes/"))
+       +biblio-notes-path "~/Sync/notes/")
+;
 ;; (use-package! org-download
 ;;   :commands
 ;;   org-download-dnd
