@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name (getenv "USER_FULL_NAME")
--      user-mail-address (getenv "USER_EMAIL"))
+;(setq user-full-name (getenv "USER_FULL_NAME")
+;-     user-mail-address (getenv "USER_EMAIL"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -104,12 +104,14 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                ))
 
-;; config for biblio
-(setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
 ;      +biblio-default-bibliography-files (concat (getenv "HOME") "/Dropbox/bibliography/MyLibrary.bib") ;'("/path/to/bibliography.bib")
        ;;https://github.com/jkitchin/org-ref/issues/757
-       +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
        ;;+biblio-notes-path (concat (getenv "HOME") "/Sync/notes/"))
+
+
+;; config for biblio
+(setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
+       +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
        +biblio-notes-path "~/Sync/notes/")
 ;
 ;; (use-package! org-download
