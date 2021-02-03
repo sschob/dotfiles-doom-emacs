@@ -104,11 +104,9 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                ))
 
-;      +biblio-default-bibliography-files (concat (getenv "HOME") "/Dropbox/bibliography/MyLibrary.bib") ;'("/path/to/bibliography.bib")
-       ;;https://github.com/jkitchin/org-ref/issues/757
-       ;;+biblio-notes-path (concat (getenv "HOME") "/Sync/notes/"))
-
-
+;; +biblio-default-bibliography-files (concat (getenv "HOME") "/Dropbox/bibliography/MyLibrary.bib") ;'("/path/to/bibliography.bib")
+;;https://github.com/jkitchin/org-ref/issues/757
+;;+biblio-notes-path (concat (getenv "HOME") "/Sync/notes/"))
 ;; config for biblio
 (setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
        +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
@@ -116,19 +114,19 @@
 ;
 (setq bibtex-dialect 'biblatex);
 ; Workaround https://github.com/jkitchin/org-ref/issues/845#
-(setq orhc-candidate-formats '(
-                               ("online" . "|${=key=}| ${author}, ${title}, (${year})")
-                               ("audio" . "|${=key=}| ${author}, ${title}")
-                               ("article" . "|${=key=}| ${author}, ${title}, ${journal} (${year}). ${keywords}")
-                               ("book" . "  |${=key=}| ${author}, ${title} (${year}) ${keywords}.")
-                               ("inbook" . "  |${=key=}| ${author}, ${chapter} in ${title} (${year}) ${keywords}")
-                               ("techreport" . "  |${=key=}| ${title}, ${institution} (${year}). ${keywords}")
-                               ("inproceedings" . "  |${=key=}| ${author}, ${title} in ${booktitle} (${year}). ${keywords}")
-                               ("incollection" . "  |${=key=}| ${author}, ${title} in ${booktitle} (${year}). ${keywords}")
-                               ("phdthesis" . "  |${=key=}| ${author}, ${title}, ${school} (${year}). Phd thesis. ${keywords}")
-                               ("mastersthesis" . "  |${=key=}| ${author}, ${title}, ${school} (${year}). MS thesis. ${keywords}")
-                               ("misc" . "  |${=key=}| ${author}, ${title}")
-                               ("unpublished" . "  |${=key=}| ${author}, ${title}")))
+;; (setq orhc-candidate-formats '(
+;;                                ("online" . "|${=key=}| ${author}, ${title}, (${year})")
+;;                                ("audio" . "|${=key=}| ${author}, ${title}")
+;;                                ("article" . "|${=key=}| ${author}, ${title}, ${journal} (${year}). ${keywords}")
+;;                                ("book" . "  |${=key=}| ${author}, ${title} (${year}) ${keywords}.")
+;;                                ("inbook" . "  |${=key=}| ${author}, ${chapter} in ${title} (${year}) ${keywords}")
+;;                                ("techreport" . "  |${=key=}| ${title}, ${institution} (${year}). ${keywords}")
+;;                                ("inproceedings" . "  |${=key=}| ${author}, ${title} in ${booktitle} (${year}). ${keywords}")
+;;                                ("incollection" . "  |${=key=}| ${author}, ${title} in ${booktitle} (${year}). ${keywords}")
+;;                                ("phdthesis" . "  |${=key=}| ${author}, ${title}, ${school} (${year}). Phd thesis. ${keywords}")
+;;                                ("mastersthesis" . "  |${=key=}| ${author}, ${title}, ${school} (${year}). MS thesis. ${keywords}")
+;;                                ("misc" . "  |${=key=}| ${author}, ${title}")
+;;                                ("unpublished" . "  |${=key=}| ${author}, ${title}")))
 ;
 ;; (use-package! org-download
 ;;   :commands
