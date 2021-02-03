@@ -53,3 +53,4 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! org-download)
+(package! org-ref :pin "151f963723507b6d42bfd1d205937e5eba28793c")
