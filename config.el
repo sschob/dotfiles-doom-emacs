@@ -87,7 +87,7 @@
 
 (after! ox-latex
   (setq org-latex-listings 'minted
-        org-latex-pdf-process '("latexmk -pdf -shell-escape %o %f"))
+        org-latex-pdf-process '("latexmk -pdf -shell-escape -output-directory=%o %f"))
 
   (add-to-list 'org-latex-packages-alist '("" "minted" ))
   (add-to-list 'org-latex-classes
