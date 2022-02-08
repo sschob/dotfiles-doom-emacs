@@ -75,6 +75,7 @@
   ; (load-file "~/.doom.d/clock-setup.el")
   (setq org-directory "~/org"
         org-agenda-files (quote ("~/org/todo/todo.org"
+                                 "~/org/lehre.org"
                                  "~/org/todo.org"
                                  "~/org/todo/bpw.org"
                                  "~/org/todo/privat.org"
