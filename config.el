@@ -74,11 +74,11 @@
 (after! org
   ; (load-file "~/.doom.d/clock-setup.el")
   (setq org-directory "~/org"
-        org-agenda-files (quote ("~/org/todo/todo.org"
-                                 "~/org/lehre.org"
+        org-agenda-files (quote ("~/org/lehre.org"
+                                 "~/org/projects.org"
                                  "~/org/todo.org"
-                                 "~/org/todo/bpw.org"
-                                 "~/org/todo/privat.org"
+                                 "~/org/privat.org"
+                                 "~/org/hse.org"
                                  "~/org/notes.org"
                                  "~/vorlesungen/TIB_ML/readme.org"
                                  "~/vorlesungen/AdvDM/readme.org"))
@@ -98,6 +98,7 @@
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
   (add-to-list 'org-latex-classes
                '("beamerS" "\\documentclass[presentation]{beamerswitch}"
                 ("\\section{%s}" . "\\section*{%s}")
@@ -105,13 +106,24 @@
                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
                ))
 
+(after! citar
+  (setq! citar-bibliography  '("~/Sync/bibliography/MyLibrary.bib"))
+  (setq! citar-notes-path "~/Sync/notes/")
+  (setq! citar-library-paths '("~/Sync/bibliography/"))
+  )
+
+;(after! org-cite
+;  (setq! org-cite-insert-processor 'citar)
+;  (setq! org-cite-follow-processor 'citar)
+;  (setq! org-cite-activate-processor 'citar))
+
 ;; +biblio-default-bibliography-files (concat (getenv "HOME") "/Dropbox/bibliography/MyLibrary.bib") ;'("/path/to/bibliography.bib")
 ;;https://github.com/jkitchin/org-ref/issues/757
 ;;+biblio-notes-path (concat (getenv "HOME") "/Sync/notes/"))
 ;; config for biblio
-(setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
-       +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
-       +biblio-notes-path "~/Sync/notes/")
+;(setq! +biblio-pdf-library-dir "~/Dropbox/bibliography/"
+;       +biblio-default-bibliography-files '("~/Dropbox/bibliography/MyLibrary.bib")
+;       +biblio-notes-path "~/Sync/notes/")
 ;
 (setq bibtex-dialect 'biblatex);
 ; Workaround https://github.com/jkitchin/org-ref/issues/845#
