@@ -1,0 +1,25 @@
+* Preamble :noexport:
+#+latex_header: \usepackage{ngerman}
+#+LCO: DIN adresse header
+#+OPTIONS: backaddress:t phone:t email:t yourref:t
+
+** Absenderinformationen
+Die Einträge hier überschreiben die Konfigurationen aus den LCO Dateien.
+# #+PHONE_NUMBER: 123
+# #+FROM_ADDRESS: Ententeich 3, Entenhausen
+# #+AUTHOR: Donald Duck
+# #+EMAIL: donald.duck@entenhausen.de
+# #+SIGNATURE: Donald Duck
+
+** Geschäftszeile
+Enable this if needed:
+# #+latex_header: \setkomavar{customer}{1234}
+# #+latex_header: \setkomavar{yourmail}{01.01.2023}
+# #+latex_header: \setkomavar{yourref}{XYZ}
+
+** Briefspezifisch
+#+SUBJECT:
+#+CLOSING: Mit freundlichem Gruß,
+
+* To :to:
+* Sehr geehrte Damen und Herren
