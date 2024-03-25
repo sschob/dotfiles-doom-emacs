@@ -6,9 +6,10 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
-
+(let ((personal-settings "~/.doom.d/myenv.el"))
+ (when (file-exists-p personal-settings)
+   (load-file personal-settings))
+)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
