@@ -9,6 +9,9 @@
 ;(setq user-full-name (getenv "USER_FULL_NAME")
 ;-     user-mail-address (getenv "USER_EMAIL"))
 
+(let ((personal-settings "~/.doom.d/myenv.el"))
+ (when (file-exists-p personal-settings)
+   (load-file personal-settings)))
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
