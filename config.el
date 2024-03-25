@@ -46,7 +46,8 @@
   ;; code here will run immediately
   :config
   ;;  code here will run after the package is loaded
-  )
+  ;; https://github.com/doomemacs/doomemacs/issues/7317
+  (advice-remove 'org-display-inline-images  #'font-lock-fontify-buffer))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
