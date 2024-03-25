@@ -160,3 +160,6 @@
 ;;                      ((executable-find "scrot") "scrot -s %s")
 ;;                      ((executable-find "gnome-screenshot") "gnome-screenshot -a -f %s")))))
 ;;  )
+(use-package! pet
+  :config
+  (add-hook 'python-base-mode-hook 'pet-mode -10))
