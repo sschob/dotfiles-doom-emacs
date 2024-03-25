@@ -51,5 +51,5 @@
 
 (package! pet)
 
-(package! ox-koma-letter
-  :load-path "lisp")
+;(package! ox-koma-letter
+;  :load-path "./lisp")
