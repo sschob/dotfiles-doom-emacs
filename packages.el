@@ -55,6 +55,13 @@
 (package! pet)
 
 (package! org-download)
-(package! org-ref :pin "151f963723507b6d42bfd1d205937e5eba28793c")
+;: (package! org-ref :pin "151f963723507b6d42bfd1d205937e5eba28793c")
 
-(unpin! org-roam company-org-roam)
+;; (unpin! org-roam company-org-roam)
+
+;; (package! doom-modeline :pin "918730eff72e155cfb31b012493a7f425bc48ff8")
+
+;; Jupyter
+(package! jupyter :pin "16cbda79167b4e2f2c6b61b218658f0f660d97f9")
+
+(package! gptel)

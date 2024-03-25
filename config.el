@@ -129,6 +129,13 @@
 ;       +biblio-notes-path "~/Sync/notes/")
 ;
 (setq bibtex-dialect 'biblatex);
+
+(use-package! gptel
+  :config
+   (setq gptel-api-key GPT-API-KEY)
+   (setq gptel-default-mode 'org-mode)
+   )
+
 ; Workaround https://github.com/jkitchin/org-ref/issues/845#
 ;; (setq orhc-candidate-formats '(
 ;;                                ("online" . "|${=key=}| ${author}, ${title}, (${year})")
