@@ -41,7 +41,10 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/org/"
+      org-roam-directory "~/Sync/notes")
+
+(setq org-cite-global-bibliography "~/Sync/bibliography/MyLibrary.bib")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -83,3 +86,19 @@
   :after ox)
 
 (set-file-template! "/brief\\.org$" :trigger "__brief.org" :mode 'org-mode)
+
+(use-package! gptel)
+
+(after! ox-latex
+  (add-to-list 'org-latex-classes
+               '("koma-article" "\\documentclass{scrartcl}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
+; (setq ansible-vault-password-file  "~/.ansible/vault_id.txt")
+
+(after! ansible
+        (setq ansible-vault-password-file  "~/.ansible/vault_id.txt"))
