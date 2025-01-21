@@ -53,3 +53,5 @@
 
 ;(package! ox-koma-letter
 ;  :load-path "./lisp")
+
+(package! gptel)
