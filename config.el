@@ -115,9 +115,7 @@
                 "\n\\usetikzlibrary{arrows.meta, positioning, automata, chains, scopes}"
                 "\n\\usepackage[noend]{algpseudocode}"))
 
-  (setq! citar-bibliography '("/Users/sschober/Sync/bibliography/MyLibrary.bib"))
-
-  )
+  (setq! citar-bibliography '("/Users/sschober/Sync/bibliography/MyLibrary.bib")))
 
 (after! ox-latex
   (setq org-latex-compiler "lualatex")
