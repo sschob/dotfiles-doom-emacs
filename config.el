@@ -116,6 +116,35 @@
                 "\n\\usepackage[noend]{algpseudocode}"))
 
   (setq! citar-bibliography '("/Users/sschober/Sync/bibliography/MyLibrary.bib")))
+;; end after! org
+
+(after! org
+  (defun my/org-name-latest-clocktable (name)
+    "Insert #+NAME: name before first table after point."
+    (save-excursion
+      (when (re-search-forward "^|.*" nil t)
+        (beginning-of-line)
+        (insert (format "#+NAME: %s\n" name)))))
+
+  (defun my/org-auto-name-clocktable (&rest _)
+    "Auto-name clocktable result using :name from BEGIN line."
+    (message "Running clocktable advice")
+    (save-excursion
+      (goto-char (point-min))
+      (when (re-search-forward "^#\\+BEGIN: clocktable.*:name \\(\\S-+\\)" nil t)
+        (let ((name (match-string 1)))
+          (forward-line)
+          (when (re-search-forward "^|.*" nil t)
+            (beginning-of-line)
+            (unless (save-excursion (forward-line -1) (looking-at "^#\\+NAME:"))
+              (insert (format "#+NAME: %s\n" name))))))))
+
+  (advice-add 'org-update-dblock :after #'my/org-auto-name-clocktable)
+
+  (map! :map org-mode-map
+        :localleader
+        :desc "Update dynamic block"
+        "u" #'org-dblock-update))
 
 (after! ox-latex
   (setq org-latex-compiler "lualatex")
