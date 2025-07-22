@@ -139,12 +139,7 @@
             (unless (save-excursion (forward-line -1) (looking-at "^#\\+NAME:"))
               (insert (format "#+NAME: %s\n" name))))))))
 
-  (advice-add 'org-update-dblock :after #'my/org-auto-name-clocktable)
-
-  (map! :map org-mode-map
-        :localleader
-        :desc "Update dynamic block"
-        "u" #'org-dblock-update))
+  (advice-add 'org-update-dblock :after #'my/org-auto-name-clocktable))
 
 (after! ox-latex
   (setq org-latex-compiler "lualatex")
