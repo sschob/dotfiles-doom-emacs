@@ -157,4 +157,19 @@
     (ansi-color-apply-on-region (point-min) (point-max))))
 
 (after! gptel
-  (setq gptel-default-mode 'org-mode))
+  (setq gptel-default-mode 'org-mode)
+
+  (setq gptel-model 'qwen3-30b-a3b-instruct-2507
+        gptel-backend
+        (gptel-make-openai "gwdg"
+          :host "chat-ai.academiccloud.de"
+          :endpoint "/v1/chat/completions"
+          :stream t
+          :key gptel-api-key
+          :models '(meta-llama-3.1-8b-instruct
+                    openai-gpt-oss-120b
+                    qwen3-235b-a22b
+                    qwen2.5-coder-32b-instruct
+                    qwen3-30b-a3b-instruct-2507
+                    )
+          )))
