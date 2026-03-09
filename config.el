@@ -172,10 +172,12 @@
                qwen2.5-coder-32b-instruct
                qwen3-30b-a3b-instruct-2507
                apertus-70b-instruct-2509
-               devstral-2-123b-instruct-2512
+               (devstral-2-123b-instruct-2512
+                :description
+                "agentic LLM for software engineering task"
+                )
                deepseek-r1-distill-llama-70b
-               )
-     )))
+               ))))
 
 
 ;; taken from https://github.com/doomemacs/doomemacs/issues/581#issuecomment-434449160
