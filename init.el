@@ -43,6 +43,7 @@
        ;;neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       ;;smooth-scroll     ; So smooth you won't believe it's not butter
        ;;tabs              ; a tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
@@ -64,12 +65,15 @@
        ;;parinfer          ; turn lisp into python, sort of
        ;;rotate-text       ; cycle region at point between text candidates
        snippets          ; my elves. They type so I don't have to
+       (whitespace +guess +trim)  ; a butler for your whitespace
        ;;word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
        (dired +dirvish +icon)           ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
-       ;;ibuffer         ; interactive buffer management
+       ;;eww               ; the internet is gross
+       ;;ibuffer           ; interactive buffer management
+       tramp             ; remote files at your arthritic fingertips
        undo              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
@@ -95,7 +99,8 @@
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       ;;lsp               ; M-x vscode
+       ;;llm               ; when I said you needed friends, I didn't mean...
+       ;;(lsp +eglot)      ; M-x vscode
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -111,6 +116,7 @@
        ;;tty               ; improve the terminal Emacs experience
 
        :lang
+       ;;ada               ; In strong typing we (blindly) trust
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;(cc +lsp)         ; C > C++ == 1
@@ -139,6 +145,7 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        ;;json              ; At least it ain't XML
+       ;;janet             ; Fun fact: Janet is me!
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
@@ -154,6 +161,7 @@
        (org +jupyter +roam2)               ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
+       ;;graphviz          ; diagrams for confusing yourself even more
        ;;purescript        ; javascript, but functional
        (python +tree-sitter)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
