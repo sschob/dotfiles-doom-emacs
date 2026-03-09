@@ -101,7 +101,6 @@
            :image-size-adjust (1.0 . 1.0)
            :latex-compiler ("lualatex -interaction nonstopmode -output-directory %o %f")
            :image-converter ("convert -density 300 -trim -quality 100 %f %O"))))
-
   ;; (setq org-latex-packages-alist
   ;;       '(("" "tikz" t)
   ;;         ("" "tikz-qtree" t)
