@@ -156,20 +156,25 @@
   (let ((inhibit-read-only t))
     (ansi-color-apply-on-region (point-min) (point-max))))
 
-(after! gptel
+(with-eval-after-load 'gptel
   (setq gptel-default-mode 'org-mode)
 
-  (setq gptel-model 'qwen3-30b-a3b-instruct-2507
-        gptel-backend
-        (gptel-make-openai "gwdg"
-          :host "chat-ai.academiccloud.de"
-          :endpoint "/v1/chat/completions"
-          :stream t
-          :key gptel-api-key
-          :models '(meta-llama-3.1-8b-instruct
-                    openai-gpt-oss-120b
-                    qwen3-235b-a22b
-                    qwen2.5-coder-32b-instruct
-                    qwen3-30b-a3b-instruct-2507
-                    )
-          )))
+  (setq gptel-model 'apertus-70b-instruct-2509)
+  (setq
+   gptel-backend
+   (gptel-make-openai "gwdg"
+     :host "chat-ai.academiccloud.de"
+     :endpoint "/v1/chat/completions"
+     :stream t
+     :key gptel-api-key
+     :models '(meta-llama-3.1-8b-instruct
+               openai-gpt-oss-120b
+               qwen3-235b-a22b
+               qwen2.5-coder-32b-instruct
+               qwen3-30b-a3b-instruct-2507
+               apertus-70b-instruct-2509
+               devstral-2-123b-instruct-2512
+               deepseek-r1-distill-llama-70b
+               )
+     )))
+

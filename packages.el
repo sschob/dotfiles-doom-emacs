@@ -49,5 +49,5 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 ;;
-;;GPTel
-(package! gptel)
+;;GPTel now in
+;; (package! gptel)
