@@ -53,7 +53,6 @@
 
 ;(package! ox-koma-letter
 ;  :load-path "./lisp")
-
-(package! gptel)
+;; (package! gptel)
 
 (package! engrave-faces)
