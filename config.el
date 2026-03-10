@@ -87,7 +87,7 @@
 
 (set-file-template! "/brief\\.org$" :trigger "__brief.org" :mode 'org-mode)
 
-(use-package! gptel)
+;; (use-package! gptel)
 
 (after! ox-latex
   (add-to-list 'org-latex-classes
