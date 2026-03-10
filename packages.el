@@ -55,3 +55,5 @@
 ;  :load-path "./lisp")
 
 (package! gptel)
+
+(package! engrave-faces)
