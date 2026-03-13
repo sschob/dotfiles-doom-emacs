@@ -85,6 +85,13 @@
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
+  (setq org-latex-packages-alist
+        (append org-latex-packages-alist
+                '(("AUTO" "babel")
+                  ("" "csquotes"))))
+
+  (setq org-latex-compiler "lualatex"))
+
 (after! org
   (setq org-preview-latex-default-process 'imagemagick)
   (setq org-preview-latex-process-alist
