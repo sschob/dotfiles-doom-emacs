@@ -83,7 +83,7 @@
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
   (setq org-latex-packages-alist
         (append org-latex-packages-alist
@@ -141,10 +141,6 @@
               (insert (format "#+NAME: %s\n" name))))))))
 
   (advice-add 'org-update-dblock :after #'my/org-auto-name-clocktable))
-
-(after! ox-latex
-  (setq org-latex-compiler "lualatex")
-  )
 
 (after! citar
   (setq citar-file-open-functions '(("html" . citar-file-open-external)
@@ -226,7 +222,7 @@
 ;;;###autoload
 (defun doom/what-has-changed ()
   "Open an ediff session to compare the module list in
-~/.emacs.d/init.example.el and ~/.doom.d/init.el."
+  ~/.emacs.d/init.example.el and ~/.doom.d/init.el."
   (interactive)
   (let ((old-modules (doom--get-modules (expand-file-name "static/init.example.el" doom-emacs-dir)))
         (new-modules (doom--get-modules (expand-file-name "init.el" doom-private-dir)))
