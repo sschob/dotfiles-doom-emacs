@@ -156,7 +156,7 @@
 (with-eval-after-load 'gptel
   (setq gptel-default-mode 'org-mode)
 
-  (setq gptel-model 'apertus-70b-instruct-2509)
+  (setq gptel-model 'mistral-large-3-675b-instruct-2512)
   (setq
    gptel-backend
    (gptel-make-openai "gwdg"
