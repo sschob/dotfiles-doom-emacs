@@ -75,11 +75,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; GPTEL
-(use-package! gptel)
-;;:config
-;;(setq! gptel-api-key "your key"))
-
 (after! ox-latex
   (add-to-list 'org-latex-classes
                '("srcarticle"
