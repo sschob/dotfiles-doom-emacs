@@ -49,5 +49,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 ;;
-;;GPTel now in
-;; (package! gptel)
+(package! engrave-faces)
