@@ -168,18 +168,42 @@
      :endpoint "/v1/chat/completions"
      :stream t
      :key gptel-api-key
-     :models '(meta-llama-3.1-8b-instruct
-               openai-gpt-oss-120b
+     :models '(
+               (meta-llama-3.1-8b-instruct
+                :description
+                "Meta Llama 3.1 8B Instruct; dez 2023; text only"
+                )
+               (openai-gpt-oss-120b
+                :description
+                "Open AI open weight model"
+                )
+               (mistral-large-3-675b-instruct-2512
+                :description
+                "Mistral Large 3 675B Instruct 2512; dez 2025; vision"
+                )
                qwen3-235b-a22b
                qwen2.5-coder-32b-instruct
                qwen3-30b-a3b-instruct-2507
-               apertus-70b-instruct-2509
+               (apertus-70b-instruct-2509
+                :description
+                "Fully open-source, Multilingual; text"
+                )
                (devstral-2-123b-instruct-2512
                 :description
                 "agentic LLM for software engineering task"
                 )
                deepseek-r1-distill-llama-70b
-               ))))
+               (internvl3.5-30b-a3b
+                :description
+                "OpenGVLa Vision, lightweight and fast (Aug 2025)")
+               (qwen3-vl-30b-a3b-instruct
+                :description
+                "Qwen 3 VL 30B A3B Instruct; text/image/video"
+                )
+               (glm-4.7
+                :description
+                "glm-4.7; text; use for coding"
+                )))))
 
 
 ;; taken from https://github.com/doomemacs/doomemacs/issues/581#issuecomment-434449160
