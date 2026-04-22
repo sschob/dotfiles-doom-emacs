@@ -157,6 +157,19 @@
               :filter-return
               #'my/jupyter-org-results-drawer-pre-blank-fix))
 
+(after! ob-core
+  (require 'ansi-color)
+
+  (defun my/org-babel-ansi-colorize-results ()
+    (when-let* ((result (org-babel-where-is-src-block-result))
+                (end (save-excursion
+                       (goto-char result)
+                       (org-babel-result-end))))
+      (ansi-color-apply-on-region result end)))
+
+  (add-hook 'org-babel-after-execute-hook
+            #'my/org-babel-ansi-colorize-results))
+
 (after! citar
   (setq citar-file-open-functions '(("html" . citar-file-open-external)
                                     ("pdf" . citar-file-open-external)
