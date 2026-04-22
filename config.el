@@ -142,6 +142,21 @@
 
   (advice-add 'org-update-dblock :after #'my/org-auto-name-clocktable))
 
+;;; workaround for this https://github.com/emacs-jupyter/jupyter/issues/607
+;;; Stand 22.04.26
+(after! jupyter-org-client
+  (defun my/jupyter-org-results-drawer-pre-blank-fix (element)
+    "Advice to ensure the RESULTS drawer has a :pre-blank 0 property.
+     This prevents 'wrong-type-argument wholenump nil' errors in newer Org versions."
+    (if (and element (eq (org-element-type element) 'drawer))
+        (progn
+          (org-element-put-property element :pre-blank 0)
+          element)
+      element))
+  (advice-add 'jupyter-org-results-drawer
+              :filter-return
+              #'my/jupyter-org-results-drawer-pre-blank-fix))
+
 (after! citar
   (setq citar-file-open-functions '(("html" . citar-file-open-external)
                                     ("pdf" . citar-file-open-external)
