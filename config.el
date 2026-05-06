@@ -259,3 +259,6 @@
     (doom--put-modules example-init-el old-modules)
     (doom--put-modules private-init-el new-modules)
     (ediff private-init-el example-init-el)))
+
+;;(setq doom-font (font-spec :family "IosevkaTerm Nerd Font" :size 14))
+;;(setq doom-variable-pitch-font (font-spec :family "IosevkaTerm Nerd Font" :size 14))
