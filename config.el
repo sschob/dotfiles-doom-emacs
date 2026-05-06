@@ -90,7 +90,16 @@
                 '(("AUTO" "babel")
                   ("" "csquotes"))))
 
-  (setq org-latex-compiler "lualatex"))
+  (add-to-list 'org-latex-packages-alist '("" "wrapfig")))
+
+(setq org-latex-compiler "lualatex")
+(setq org-latex-src-block-backend 'engraved)
+
+(setq org-latex-engraved-options
+      '(("commandchars" . "\\\\\\{\\}") ("highlightcolor" . "white!95!black!80!blue")
+        ("breaklines" . "true")
+        ("numbers" . "left")
+        ("breaksymbol" . "\\color{white!60!black}\\tiny\\ensuremath{\\hookrightarrow}")))
 
 (after! org
   (setq org-preview-latex-default-process 'imagemagick)
