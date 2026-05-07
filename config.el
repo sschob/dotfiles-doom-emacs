@@ -75,6 +75,12 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
+;; FONT settings
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 14))
+(setq doom-variable-pitch-font (font-spec :family "Iosevka Nerd Font" :size 14))
+
+
 (after! ox-latex
   (add-to-list 'org-latex-classes
                '("srcarticle"
@@ -94,7 +100,6 @@
 
 (setq org-latex-compiler "lualatex")
 (setq org-latex-src-block-backend 'engraved)
-
 (setq org-latex-engraved-options
       '(("commandchars" . "\\\\\\{\\}") ("highlightcolor" . "white!95!black!80!blue")
         ("breaklines" . "true")
@@ -238,7 +243,6 @@
                 "glm-4.7; text; use for coding"
                 )))))
 
-
 ;; taken from https://github.com/doomemacs/doomemacs/issues/581#issuecomment-434449160
 
 (defun doom--get-modules (file)
@@ -268,6 +272,3 @@
     (doom--put-modules example-init-el old-modules)
     (doom--put-modules private-init-el new-modules)
     (ediff private-init-el example-init-el)))
-
-;;(setq doom-font (font-spec :family "IosevkaTerm Nerd Font" :size 14))
-;;(setq doom-variable-pitch-font (font-spec :family "IosevkaTerm Nerd Font" :size 14))
