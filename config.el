@@ -115,3 +115,8 @@
     :stream t                             ;Stream responses
     :models '(mistral:latest qwen3.5:4b)) 
   )
+
+(setq deft-directory "~/Documents")
+
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
