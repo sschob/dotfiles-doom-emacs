@@ -90,6 +90,9 @@
 ;; (use-package! gptel)
 
 (after! ox-latex
+  ;(setq org)
+  (setopt org-latex-pdf-process
+      '("latexmk -lualatex -interaction=nonstopmode -output-directory=%o %f"))
   (add-to-list 'org-latex-classes
                '("koma-article" "\\documentclass{scrartcl}"
                  ("\\section{%s}" . "\\section*{%s}")
