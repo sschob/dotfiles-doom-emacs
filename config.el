@@ -110,3 +110,10 @@
   (setq gptel-api-key
         (auth-source-pick-first-password :host "api.openai.com"))
  (setq gptel-default-mode 'org-mode))
+  (setq gptel-default-mode 'org-mode)
+
+  (gptel-make-ollama "Ollama"             ;Any name of your choosing
+    :host "localhost:11434"               ;Where it's running
+    :stream t                             ;Stream responses
+    :models '(mistral:latest qwen3.5:4b)) 
+  )
