@@ -155,14 +155,18 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org                ;organize your plain life in plain text
+        +pretty
+        +dragndrop
+        +present
         +jupyter           ; jupyter integration
-        +roam2)            ; Zettelkasten
+        +roam)            ; Zettelkasten
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python             ; beautiful is better than ugly
         +pyenv             ; Python Env
-        +tree-sitter)      ; -> tools tree-sitter
+        +lsp
+        )      ; -> tools tree-sitter
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
