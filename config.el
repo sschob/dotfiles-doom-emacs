@@ -101,15 +101,13 @@
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
-; (setq ansible-vault-password-file  "~/.ansible/vault_id.txt")
-
 (after! ansible
         (setq ansible-vault-password-file  "~/.ansible/vault_id.txt"))
 
 (after! gptel
   (setq gptel-api-key
         (auth-source-pick-first-password :host "api.openai.com"))
- (setq gptel-default-mode 'org-mode))
+
   (setq gptel-default-mode 'org-mode)
 
   (gptel-make-ollama "Ollama"             ;Any name of your choosing
