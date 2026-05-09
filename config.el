@@ -78,9 +78,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(use-package! pet
-  :config
-  (add-hook 'python-base-mode-hook 'pet-mode -10))
+;; (use-package! pet
+;;   :config
+  ;; (add-hook 'python-base-mode-hook 'pet-mode -10))
 
 (use-package! ox-koma-letter
   :after ox)
