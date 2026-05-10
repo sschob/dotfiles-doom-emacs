@@ -108,6 +108,9 @@
 
 (after! ansible
         (setq ansible-vault-password-file  "~/.ansible/vault_id.txt"))
+;;
+;; Configure GPTEL
+;;
 
 (after! gptel
   (setq gptel-api-key
