@@ -95,6 +95,7 @@
 (after! ox-latex
   (setopt org-latex-pdf-process
       '("latexmk -lualatex -interaction=nonstopmode -output-directory=%o %f"))
+
   (add-to-list 'org-latex-classes
                '("koma-article" "\\documentclass{scrartcl}"
                  ("\\section{%s}" . "\\section*{%s}")
