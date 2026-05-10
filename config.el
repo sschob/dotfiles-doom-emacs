@@ -51,7 +51,6 @@
 
 (setq org-cite-global-bibliography "~/Sync/bibliography/MyLibrary.bib")
 
-
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -93,7 +92,6 @@
 (set-file-template! "/brief\\.org$" :trigger "__brief.org" :mode 'org-mode)
 
 (after! ox-latex
-  ;(setq org)
   (setopt org-latex-pdf-process
       '("latexmk -lualatex -interaction=nonstopmode -output-directory=%o %f"))
   (add-to-list 'org-latex-classes
