@@ -91,6 +91,7 @@
 
 (set-file-template! "/brief\\.org$" :trigger "__brief.org" :mode 'org-mode)
 
+;; Configure ox-latex
 (after! ox-latex
   (setopt org-latex-pdf-process
       '("latexmk -lualatex -interaction=nonstopmode -output-directory=%o %f"))
@@ -100,7 +101,9 @@
                  ("\\subsection{%s}" . "\\subsection*{%s}")
                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (setopt org-latex-default-class "koma-article"))
 
 (after! ansible
         (setq ansible-vault-password-file  "~/.ansible/vault_id.txt"))
