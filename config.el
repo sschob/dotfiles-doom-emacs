@@ -47,6 +47,8 @@
 (setq org-directory "~/org/"
       org-roam-directory "~/Sync/notes")
 
+(setq deft-directory "~/Documents")
+
 (setq org-cite-global-bibliography "~/Sync/bibliography/MyLibrary.bib")
 
 
@@ -116,6 +118,3 @@
     :stream t                             ;Stream responses
     :models '(mistral:latest qwen3.5:4b)) 
   )
-
-(setq deft-directory "~/Documents")
-
