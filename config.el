@@ -104,6 +104,7 @@
       '(("commandchars" . "\\\\\\{\\}") ("highlightcolor" . "white!95!black!80!blue")
         ("breaklines" . "true")
         ("numbers" . "left")
+        ("xleftmargin" . "2em")
         ("breaksymbol" . "\\color{white!60!black}\\tiny\\ensuremath{\\hookrightarrow}")))
 
 (after! org
