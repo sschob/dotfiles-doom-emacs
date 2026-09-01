@@ -91,6 +91,17 @@
 
 (set-file-template! "/brief\\.org$" :trigger "__brief.org" :mode 'org-mode)
 
+
+(after! org
+  (setq org-latex-compiler "lualatex")
+  (setq org-latex-src-block-backend 'engraved)
+  (setq org-export-show-temporary-export-buffer t)
+  (setq org-latex-engraved-options
+        '(("commandchars" . "\\\\\\{\\}") ("highlightcolor" . "white!95!black!80!blue")
+          ("breaklines" . "true")
+          ("numbers" . "left")
+          ("breaksymbol" . "\\color{white!60!black}\\tiny\\ensuremath{\\hookrightarrow}"))))
+
 ;; Configure ox-latex
 (after! ox-latex
   (setopt org-latex-pdf-process
@@ -113,9 +124,9 @@
 ;;
 
 (after! gptel
-  (setq gptel-api-key
-        (auth-source-pick-first-password :host "api.openai.com"))
-
+  ;; enable MCP
+  (require 'gptel-integrations)
+  ;; more config
   (setq gptel-default-mode 'org-mode)
 
   (gptel-make-ollama "Ollama"             ;Any name of your choosing
