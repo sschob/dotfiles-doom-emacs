@@ -219,3 +219,6 @@
              ))
   :config (require 'mcp-hub)
   :hook (after-init . mcp-hub-start-all-server))
+
+(use-package! gptel-agent
+  :config (gptel-agent-update))         ;Read files from agents directories

@@ -58,3 +58,5 @@
 (package! engrave-faces)
 
 (package! mcp)
+
+(package! gptel-agent)
