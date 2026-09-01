@@ -91,11 +91,12 @@
                  ("\\paragraph{%s}" . "\\paragraph*{%s}")
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-  (setq org-latex-packages-alist
-        (append org-latex-packages-alist
-                '(("AUTO" "babel")
-                  ("" "csquotes"))))
-
+                                        ;  (setq org-latex-packages-alist
+                                        ;        (append org-latex-packages-alist
+                                        ;                '(("AUTO" "babel")
+                                        ;                  ("" "csquotes"))))
+  (add-to-list 'org-latex-packages-alist '("AUTO" "babel") t)
+  (add-to-list 'org-latex-packages-alist '("" "csquotes") t)
   (add-to-list 'org-latex-packages-alist '("" "wrapfig")))
 
 (setq org-latex-compiler "lualatex")
