@@ -299,3 +299,6 @@
     (doom--put-modules example-init-el old-modules)
     (doom--put-modules private-init-el new-modules)
     (ediff private-init-el example-init-el)))
+
+(add-to-list 'load-path "~/.doom.d/lisp/")
+(require 'my-gptel-org)
