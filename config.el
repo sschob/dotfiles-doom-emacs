@@ -128,9 +128,94 @@
   (require 'gptel-integrations)
   ;; more config
   (setq gptel-default-mode 'org-mode)
-
+  (add-hook 'gptel-post-stream-hook 'gptel-auto-scroll)
+  ;;
+  ;; Make backends
   (gptel-make-ollama "Ollama"             ;Any name of your choosing
     :host "localhost:11434"               ;Where it's running
     :stream t                             ;Stream responses
     :models '(mistral:latest qwen3.5:4b)) 
-  )
+                                        ; Anthropic / Claude
+  (gptel-make-anthropic "Claude"
+    :stream t
+    :key (auth-source-pick-first-password :host "api.anthropic.com")
+    :models '(claude-sonnet-5))
+
+  (gptel-make-openai "GWDG"
+    :host "chat-ai.academiccloud.de"
+    :endpoint "/v1/chat/completions"
+    :stream t
+    :key (auth-source-pick-first-password :host "chat-ai.academiccloud")
+    :models '(
+              (meta-llama-3.1-8b-instruct
+               :description
+               "Meta Llama 3.1 8B Instruct; dez 2023; text only"
+               )
+              (openai-gpt-oss-120b
+               :description
+               "Open AI open weight model"
+               )
+              (mistral-large-3-675b-instruct-2512
+               :description "Mistral Large 3 675B Instruct 2512; dez 2025; vision"
+               )
+              (
+               qwen3.8-27b
+               :description "Qwen 3.8 27b"
+               :capabilities (media tool json url)
+               :multimodal t
+               :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp" "application/pdf" "video/mp4" "video/mpeg" )
+               )
+              (
+               qwen3.6-35b-a3b
+               :description "Qwen 3.6 35B A3B"
+               :capabilities (media tool json url)
+               :multimodal t
+               :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp" "application/pdf" "application/pptx")
+               )
+              (qwen3-omni-30b-a3b-instruct
+               :description "Qwen 3 OMNI: "
+               :capabilities (media tool json url)
+               )
+              (
+               qwen3-coder-next
+               :description "Qwen 3 Coder Next: Feb 2026; text, coding"
+               :capabilities (media tool json url)
+               )
+              (apertus-70b-instruct-2509
+               :description
+               "Fully open-source, Multilingual; text"
+               )
+              (devstral-2-123b-instruct-2512
+               :description
+               "agentic LLM for software engineering task"
+               )
+              deepseek-r1-distill-llama-70b
+              (internvl3.5-30b-a3b
+               :description
+               "OpenGVLa Vision, lightweight and fast (Aug 2025)")
+              (qwen3-vl-30b-a3b-instruct
+               :description
+               "Qwen 3 VL 30B A3B Instruct; text/image/video"
+               )
+              (glm-4.7
+               :description
+               "glm-4.7; text; use for coding"
+               )))
+ ;; Default backend and model
+  (setq gptel-model 'qwen3.6-35b-a3b); 'qwen3.8-27b)
+  (setq gptel-backend (gptel-get-backend "GWDG")))
+
+(use-package mcp
+  :ensure t
+  :after gptel
+  :custom (mcp-hub-servers
+           `(
+             ;; ("filesystem" . (:command "npx"
+             ;;                  :args ("-y" "@modelcontextprotocol/server-filesystem")
+             ;;                 :roots ("/home/lizqwer/MyProject/")))
+             ("fetch" . (:command "uvx" :args ("mcp-server-fetch")))
+             ;; ("arxiv-mcp-server" . (:command "uv" :args ("tool run arxiv-mcp-server")))
+             ;("qdrant" . (:url "http://localhost:8000/sse"))
+             ))
+  :config (require 'mcp-hub)
+  :hook (after-init . mcp-hub-start-all-server))

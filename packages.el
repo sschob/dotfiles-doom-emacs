@@ -56,3 +56,5 @@
 ;; (package! gptel)
 
 (package! engrave-faces)
+
+(package! mcp)
