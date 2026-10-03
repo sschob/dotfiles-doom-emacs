@@ -22,6 +22,7 @@
 
        :completion
        (corfu
+        +icons
         +dabbrev
         +orderless)       ; complete with cap(f), cape and a flying feather!
        ;;company          ; the ultimate code completion backend
