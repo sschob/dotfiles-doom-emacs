@@ -222,3 +222,14 @@
 
 (use-package! gptel-agent
   :config (gptel-agent-update))         ;Read files from agents directories
+
+;; https://github.com/emacs-languagetool/eglot-ltex-plus
+
+(use-package! eglot-ltex-plus
+  :commands (eglot-ltex-plus--server-program)
+  :init
+  (setq eglot-ltex-plus-server-path "/opt/homebrew/bin/ltex-ls-plus"
+        eglot-ltex-plus-communication-channel 'stdio)
+  :hook (org-mode . (lambda ()
+                      (require 'eglot-ltex-plus)
+                      (eglot-ensure))))
