@@ -62,5 +62,6 @@
 (package! gptel-agent)
 
 ;; lsp-server ltex-plus
+;; Requires brew install ltex-ls-plus
 (package! eglot-ltex-plus
   :recipe (:host github :repo "emacs-languagetool/eglot-ltex-plus"))
