@@ -229,7 +229,24 @@
   :commands (eglot-ltex-plus--server-program)
   :init
   (setq eglot-ltex-plus-server-path "/opt/homebrew/bin/ltex-ls-plus"
-        eglot-ltex-plus-communication-channel 'stdio)
-  :hook (org-mode . (lambda ()
-                      (require 'eglot-ltex-plus)
-                      (eglot-ensure))))
+        eglot-ltex-plus-communication-channel 'stdio))
+
+(defun my/ltex-toggle ()
+  "Start or stop LTEX+ (via Eglot) in the current buffer."
+  (interactive)
+  (require 'eglot-ltex-plus)
+  (if-let ((server (eglot-current-server)))
+      (progn (eglot-shutdown server)
+             (message "LTEX+ stopped"))
+    (call-interactively #'eglot)
+    (message "LTEX+ started")))
+
+;; (add-hook 'eglot-managed-mode-hook
+;;           (lambda ()
+;;             (when (derived-mode-p 'org-mode)
+;;               (if (eglot-managed-p)
+;;                   (flyspell-mode -1)
+;;                (flyspell-mode 1)))))
+
+(map! :leader
+      :desc "LTEX+ grammar check" "t L" #'my/ltex-toggle)
