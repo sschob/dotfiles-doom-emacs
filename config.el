@@ -205,7 +205,7 @@
   (setq gptel-model 'qwen3.6-35b-a3b); 'qwen3.8-27b)
   (setq gptel-backend (gptel-get-backend "GWDG")))
 
-(use-package mcp
+(use-package! mcp
   :ensure t
   :after gptel
   :custom (mcp-hub-servers
