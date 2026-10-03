@@ -170,6 +170,7 @@
        (python             ; beautiful is better than ugly
         +pyenv             ; Python Env
         +lsp
+        +tree-sitter
         )      ; -> tools tree-sitter
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
