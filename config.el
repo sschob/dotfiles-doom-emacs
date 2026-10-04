@@ -250,3 +250,8 @@
 
 (map! :leader
       :desc "LTEX+ grammar check" "t L" #'my/ltex-toggle)
+
+;; UV-mode https://github.com/z80dev/uv-mode
+;;
+(use-package! uv-mode
+  :hook ((python-mode python-ts-mode) . uv-mode-auto-activate-hook))

@@ -65,3 +65,5 @@
 ;; Requires brew install ltex-ls-plus
 (package! eglot-ltex-plus
   :recipe (:host github :repo "emacs-languagetool/eglot-ltex-plus"))
+
+(package! uv-mode)
