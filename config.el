@@ -302,3 +302,19 @@
 
 (add-to-list 'load-path "~/.doom.d/lisp/")
 (require 'my-gptel-org)
+
+;;; My Inline math
+
+(defun my/org-inline-math ()
+  (interactive)
+  (insert "\\(  \\)")
+  (backward-char 3))
+
+(defun my/org-display-math ()
+  (interactive)
+  (insert "\\[  \\]")
+  (backward-char 3))
+
+(map! :map org-mode-map
+      :i "C-c m" #'my/org-inline-math
+      :i "C-c M" #'my/org-display-math)
