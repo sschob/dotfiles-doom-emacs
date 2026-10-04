@@ -171,7 +171,8 @@
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python             ; beautiful is better than ugly
-        +pyenv             ; Python Env
+        +uv
+        ;+pyenv             ; Python Env
         +lsp               ; -> uv tool install ty
         +tree-sitter       ; -> tools tree-sitter
         )
